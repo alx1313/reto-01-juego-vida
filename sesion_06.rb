@@ -68,7 +68,7 @@ class Life
   def add_neighbors
     Universe.total_neighbors = Universe.north + Universe.south + Universe.east + Universe.west 
   end
-  
+
   def corner_top(cordx, cordy)
     Universe.north = Universe.acp(cordx + 3, cordy)
     Universe.south = Universe.acp(cordx + 1, cordy)

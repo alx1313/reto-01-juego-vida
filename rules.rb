@@ -6,34 +6,34 @@ class Rules
   Universe.new
   def reaper_rules(reaper, cordx, cordy)
     if reaper > 3
-      Universe.chl(0, cordx, cordy)
+      Universe.change_life(0, cordx, cordy)
     else
-      Universe.chl(1, cordx, cordy)
+      Universe.change_life(1, cordx, cordy)
     end
   end
 
-  def rule_1(cordx, cordy)
-    if Universe.acp(cordx, cordy) == 1
-      Universe.chl(1, cordx, cordy)
-      puts Universe.access_entire_planet 
-    elsif Universe.acp(cordx, cordy).zero?
-      Universe.chl(1, cordx, cordy)
+  def self.rule_1(cordx, cordy)
+    if Universe.access_planet(cordx, cordy) == 1
+      Universe.change_life(1, cordx, cordy)
+      puts Universe.access_entire_planet
+    elsif Universe.access_planet(cordx, cordy).zero?
+      Universe.change_life(1, cordx, cordy)
       puts Universe.access_entire_planet
     end
   end
 
-  def rule_2(cordx, cordy)
-    if Universe.acp(cordx, cordy) == 1
-      Universe.chl(1, cordx, cordy)
+  def self.rule_2(cordx, cordy)
+    if Universe.access_planet(cordx, cordy) == 1
+      Universe.change_life(1, cordx, cordy)
       puts Universe.access_entire_planet
-    elsif Universe.acp(cordx, cordy).zero?
-      Universe.chl(0, cordx, cordy)
+    elsif Universe.access_planet(cordx, cordy).zero?
+      Universe.change_life(0, cordx, cordy)
       puts Universe.access_entire_planet
     end
   end
 
-  def rule_3(cordx, cordy)
-    Universe.chl(0, cordx, cordy)
+  def self.rule_3(cordx, cordy)
+    Universe.change_life(0, cordx, cordy)
     puts Universe.access_entire_planet
   end
 
