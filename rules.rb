@@ -5,7 +5,7 @@ load 'universe.rb'
 class Rules
   Universe.new
   def self.reaper_rules(reaper, cordx, cordy)
-    if reaper > 3
+    if reaper == 4
       Universe.change_life(0, cordx, cordy)
     else
       Universe.change_life(1, cordx, cordy)
