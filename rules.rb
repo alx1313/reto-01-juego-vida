@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'universe.rb'
+load 'universe.rb'
 # lo que dice el comentario de arriba
 class Rules
   Universe.new
-  def reaper_rules(reaper, cordx, cordy)
+  def self.reaper_rules(reaper, cordx, cordy)
     if reaper > 3
       Universe.change_life(0, cordx, cordy)
     else
@@ -37,7 +37,7 @@ class Rules
     puts Universe.access_entire_planet
   end
 
-  def alive_rules(mercy, cordx, cordy)
+  def self.alive_rules(mercy, cordx, cordy)
     if mercy == 3
       Rules.rule_1(cordx, cordy)
     elsif mercy == 2
